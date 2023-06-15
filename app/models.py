@@ -3,11 +3,6 @@ from django.db import models
 
 class Category(models.Model):
     category = models.CharField(max_length=255)
-    vehicle_type = models.CharField(max_length=255)
-    vehicle_year = models.CharField(max_length=255)
-    vehicle_make = models.CharField(max_length=255)
-    vehicle_model = models.CharField(max_length=255)
-    vehicle_engine = models.CharField(max_length=255)
     status = models.CharField(max_length=20, default="New")
 
     class Meta:
@@ -16,6 +11,22 @@ class Category(models.Model):
 
     def __str__(self):
         return self.category
+
+
+class Vehicle(models.Model):
+    vehicle_type = models.CharField(max_length=255, blank=True, null=True)
+    vehicle_year = models.CharField(max_length=255, blank=True, null=True)
+    vehicle_make = models.CharField(max_length=255, blank=True, null=True)
+    vehicle_model = models.CharField(max_length=255, blank=True, null=True)
+    vehicle_engine = models.CharField(max_length=255, blank=True, null=True)
+    status = models.CharField(max_length=20, default="New")
+
+    class Meta:
+        verbose_name = "Car"
+        verbose_name_plural = "Cars"
+
+    def __str__(self):
+        return self.vehicle_make
 
 
 class Link(models.Model):

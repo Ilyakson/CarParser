@@ -1,12 +1,19 @@
 from django.contrib import admin
 
-from app.models import Category, Link, ProductInfo
+from app.models import Category, Link, ProductInfo, Vehicle
 
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = [
-        "category", "vehicle_type", "vehicle_year",
+        "category", "status",
+    ]
+
+
+@admin.register(Vehicle)
+class VehicleAdmin(admin.ModelAdmin):
+    list_display = [
+        "vehicle_type", "vehicle_year",
         "vehicle_make", "vehicle_model", "vehicle_engine", "status",
     ]
 
