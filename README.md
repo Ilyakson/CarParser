@@ -1,4 +1,4 @@
-# Job Scraper
+# Auto Parts Parser
 This Django application allows you to collect information about automotive parts from Advance Auto Parts based on the specified category, year, type, brand, model, and engine. It uses Selenium to automate getting job details and storing them in a database.
 ## Installation
 
